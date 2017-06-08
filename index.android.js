@@ -9,15 +9,4 @@ import {
   AppRegistry,View
 } from 'react-native';
 import App from'./src/Components/App';
-export default class clone_tea extends Component {
-  render() {
-    return (
-      <App />
-
-    );
-  }
-}
-
-
-
-AppRegistry.registerComponent('clone_tea', () => clone_tea);
+AppRegistry.registerComponent('clone_tea', () => App);
