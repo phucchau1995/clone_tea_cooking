@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import {
-    Text, View, StyleSheet
+    Text, View, StyleSheet, StatusBar
 } from 'react-native';
 
 class Home extends Component {
+    static navigationOptions = { title: 'Home', header: null };
     state = {}
     render() {
         return (
-              <View><Text>...</Text></View>
-          );
+
+            <View>
+                <StatusBar hidden={true} />
+
+                <Text>...</Text>
+            </View>
+        );
     }
 }
 
