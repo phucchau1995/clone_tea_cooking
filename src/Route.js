@@ -3,7 +3,7 @@
  *  Version: 0.0.1
 */
 
-//=================================import react library=======================================
+//=================================import react library=================================
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
