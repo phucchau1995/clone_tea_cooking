@@ -8,13 +8,13 @@
 import React, { Component } from 'react';
 import {
     Text, View, StyleSheet, StatusBar,
-    Dimensions,TouchableOpacity
+    Dimensions,TouchableOpacity,ScrollView
 } from 'react-native';
 
 //=================================import picture for temporary UI===========================
 import HeaderSwiper from './HeaderSwiper';
 import SummerFood from './SummerFood';
-
+import SaltyFood from './SaltyFood';
 //=================================Global variable===========================================
 const { width } = Dimensions.get('window');
 const imageWidth = width - 40;
@@ -25,11 +25,12 @@ export default class Home extends Component {
     state = {}
     render() {
         return (
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
                 <StatusBar hidden={true} />
                 <HeaderSwiper />
                 <SummerFood />
-            </View>
+                <SaltyFood />
+            </ScrollView>
         );
     }
 }

@@ -24,22 +24,21 @@ import summerIcon_5 from '../../../Images/summer_img/summer_5.jpg';
 
 //=================================Global variable===========================================
 const { height, width } = Dimensions.get('window');
-const imageWidth = width;
+const imageWidth = width - 15;
 const imageHeight = imageWidth / 3;
 var tmp_array = [
     { key: "1", value: summerIcon_1, description: 'Bánh trà xanh sốt caramel' },
     { key: "2", value: summerIcon_2, description: 'Bánh moha' },
     { key: "3", value: summerIcon_3, description: 'Tiramisu trà xanh' },
     { key: "4", value: summerIcon_4, description: 'Ice cake break' },
-    { key: "5", value: summerIcon_5, description: 'Lemon cheese cake' }
 ];
-export default class HeaderSwiper extends Component {
+
+export default class SaltyFood extends Component {
     constructor(props) {
         super(props);
-        const ds =
-            this.state = {
+        this.state = {
 
-            }
+        }
     }
     state = {}
     render() {
@@ -47,7 +46,7 @@ export default class HeaderSwiper extends Component {
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>
-                        Các món ăn mùa hè
+                        Các món ăn mặn
                     </Text>
                     <TouchableOpacity>
                         <Text style={styles.moreText}>
@@ -55,44 +54,23 @@ export default class HeaderSwiper extends Component {
                         </Text>
                     </TouchableOpacity>
                 </View>
-
                 <ListView enableEmptySections
-                    horizontal={true} removeClippedSubviews
+                    horizontal={false} removeClippedSubviews
                     dataSource={new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
                         .cloneWithRows(tmp_array)}
                     style={styles.listProduct}
                     renderRow={product => (
                         <TouchableOpacity>
                             <View style={styles.product}>
-                                <Image source={product.value} style={styles.imgProduct} />
-                                <Text style={styles.textProduct}>{product.description}
-                                </Text>
+                                <Image source={product.value} style={styles.imgProduct}>
+                                    <Text style={styles.textProduct}>
+                                        {product.description}
+                                    </Text>
+                                </Image>
                             </View>
                         </TouchableOpacity>
                     )} />
 
-                {/*<TouchableOpacity>
-                            <View style={styles.product}>
-                                <Image source={summerIcon_1} style={styles.imgProduct}/>
-                                <Text style={styles.textProduct}>Bánh trà xanh sốt caramel
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <View style={styles.product}>
-                                <Image source={summerIcon_2} style={styles.imgProduct}/>
-                                <Text style={styles.textProduct}>Fruit tark
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <View style={styles.product}>
-                                <Image source={summerIcon_3} style={styles.imgProduct}/>
-                                <Text style={styles.textProduct}>I cake break
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                </View>*/}
             </View>
         );
     }
@@ -102,7 +80,6 @@ export default class HeaderSwiper extends Component {
 //=================================using Extendsion StyleSheet===========================
 const styles = StyleSheet.create({
     container: {
-        height: 220,
         backgroundColor: '#fff',
         marginTop: 5,
         flexDirection: 'column'
@@ -115,7 +92,7 @@ const styles = StyleSheet.create({
     headerText: {
         color: 'green',
         fontSize: 18,
-        marginLeft: 10
+        marginLeft: 5
     },
     moreText: {
         color: 'green',
@@ -124,20 +101,25 @@ const styles = StyleSheet.create({
         marginTop: 2
     },
     listProduct: {
-        flexDirection: 'row'
+        flexDirection: 'column'
     },
     product: {
-        justifyContent: 'center',
-        marginHorizontal: 5,
-        width: 150
+        marginVertical: 5,
+        width: width,
+        height: 120,
+        marginLeft: 5,
     },
     imgProduct: {
-        width: 150,
+        width: imageWidth,
         height: 120,
-        borderRadius: 15,
     },
     textProduct: {
         flexWrap: 'wrap',
-        textAlign: 'center'
+        textAlign: 'left',
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold',
+        top: 90,
+        marginHorizontal: 10
     }
 });
