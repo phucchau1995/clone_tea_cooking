@@ -70,29 +70,6 @@ export default class HeaderSwiper extends Component {
                             </View>
                         </TouchableOpacity>
                     )} />
-
-                {/*<TouchableOpacity>
-                            <View style={styles.product}>
-                                <Image source={summerIcon_1} style={styles.imgProduct}/>
-                                <Text style={styles.textProduct}>Bánh trà xanh sốt caramel
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <View style={styles.product}>
-                                <Image source={summerIcon_2} style={styles.imgProduct}/>
-                                <Text style={styles.textProduct}>Fruit tark
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <View style={styles.product}>
-                                <Image source={summerIcon_3} style={styles.imgProduct}/>
-                                <Text style={styles.textProduct}>I cake break
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                </View>*/}
             </View>
         );
     }
