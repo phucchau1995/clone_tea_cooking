@@ -30,10 +30,9 @@ var tmp_array = [
     { key: "1", value: summerIcon_1, description: 'Bánh trà xanh sốt caramel' },
     { key: "2", value: summerIcon_2, description: 'Bánh moha' },
     { key: "3", value: summerIcon_3, description: 'Tiramisu trà xanh' },
-    { key: "4", value: summerIcon_4, description: 'Ice cake break' },
 ];
 
-export default class SaltyFood extends Component {
+export default class SoupFood extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -46,7 +45,7 @@ export default class SaltyFood extends Component {
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>
-                        Các món ăn mặn
+                        Các món Soup
                     </Text>
                     <TouchableOpacity>
                         <Text style={styles.moreText}>
@@ -81,9 +80,8 @@ export default class SaltyFood extends Component {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
-        marginTop: 5,
-        flexDirection: 'column',
-        paddingBottom:10
+        marginVertical: 10,
+        flexDirection: 'column'
     },
     header: {
         flexDirection: 'row',

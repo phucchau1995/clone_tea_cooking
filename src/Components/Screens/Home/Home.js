@@ -15,6 +15,8 @@ import {
 import HeaderSwiper from './HeaderSwiper';
 import SummerFood from './SummerFood';
 import SaltyFood from './SaltyFood';
+import SoupFood from './SoupFood';
+
 //=================================Global variable===========================================
 const { width } = Dimensions.get('window');
 const imageWidth = width - 40;
@@ -30,6 +32,7 @@ export default class Home extends Component {
                 <HeaderSwiper />
                 <SummerFood />
                 <SaltyFood />
+                <SoupFood />
             </ScrollView>
         );
     }
