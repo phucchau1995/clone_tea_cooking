@@ -12,8 +12,6 @@ import {
 } from 'react-native';
 
 //=================================import library from 3-rd party============================
-import Swiper from 'react-native-swiper';
-import EStyleSheet from 'react-native-extended-stylesheet';
 
 //=================================import picture for temporary UI===========================
 import summerIcon_1 from '../../../Images/summer_img/summer_1.jpg';

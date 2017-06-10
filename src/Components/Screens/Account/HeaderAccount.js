@@ -24,7 +24,7 @@ const { height, width } = Dimensions.get('window');
 const imageWidth = width;
 const imageHeight = imageWidth / 3;
 
-export default class Login extends Component {
+export default class HeaderAccount extends Component {
     constructor(props) {
         super(props);
         const ds =

@@ -14,7 +14,7 @@ import {
 //=================================import picture for temporary UI===========================
 import FavoriteFood from './FavoriteFood';
 import FavoriteVideo from './FavoriteVideo';
-import Login from './Login';
+import HeaderAccount from './HeaderAccount';
 
 export default class Account extends Component {
     static navigationOptions = { title: 'Home', header: null };
@@ -23,7 +23,7 @@ export default class Account extends Component {
         return (
             <ScrollView style={styles.container}>
                 <StatusBar hidden={true} />
-                <Login />
+                <HeaderAccount />
                 <FavoriteFood />
                 <FavoriteVideo />
             </ScrollView>

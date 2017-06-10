@@ -14,11 +14,11 @@ import Collection from './Components/Screens/Collection/Collection';
 import Source from './Components/Screens/Source/Source';
 import Video from './Components/Screens/Video/Video';
 import Account from './Components/Screens/Account/Account';
-
+import DetailFood from './Components/Screens/CommonScreen/DetailFood';
 //=================================StackNavigator=======================================
 export const HomeStack = StackNavigator({
     Windows_Home: {
-        screen: Home,
+        screen: DetailFood,
         name: 'Home',
         navigationOptions: {
             title: 'Home',
