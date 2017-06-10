@@ -1,15 +1,36 @@
+/*  Author: Nguyen Phuc Chau
+ *  Date write:09/06/2017
+ *  Version: 0.0.1
+ *  Description: Write home JSX for showing diverse cuisine
+*/
+
+//=================================import react library=======================================
 import React, { Component } from 'react';
 import {
-    Text, View, StyleSheet
+    Text, View, StyleSheet, StatusBar,
+    Dimensions,TouchableOpacity,ScrollView
 } from 'react-native';
 
-class Source extends Component {
+//=================================import picture for temporary UI===========================
+import FamilySource from './FamilySource';
+import HeaderSource from './HeaderSource';
+
+
+export default class Source extends Component {
+    static navigationOptions = { title: 'Home', header: null };
     state = {}
     render() {
         return (
-              <View><Text>...</Text></View>
-          );
+            <ScrollView style={styles.container}>
+                <StatusBar hidden={true} />
+                <HeaderSource />
+                <FamilySource />
+            </ScrollView>
+        );
     }
 }
 
-export default Source;
+const styles = StyleSheet.create({
+    container: {
+    }
+});

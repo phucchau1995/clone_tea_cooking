@@ -16,7 +16,7 @@ import ListCollection from './ListCollection';
 import HeaderCollection from './HeaderCollection';
 
 
-export default class Home extends Component {
+export default class Collection extends Component {
     static navigationOptions = { title: 'Home', header: null };
     state = {}
     render() {
