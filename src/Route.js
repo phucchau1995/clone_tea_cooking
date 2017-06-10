@@ -15,10 +15,12 @@ import Source from './Components/Screens/Source/Source';
 import Video from './Components/Screens/Video/Video';
 import Account from './Components/Screens/Account/Account';
 import DetailFood from './Components/Screens/CommonScreen/DetailFood';
+import SignIn from './Components/Screens/Account/SignIn';
+import Register from './Components/Screens/Account/Register';
 //=================================StackNavigator=======================================
 export const HomeStack = StackNavigator({
     Windows_Home: {
-        screen: DetailFood,
+        screen: Home,
         name: 'Home',
         navigationOptions: {
             title: 'Home',
