@@ -5,7 +5,7 @@
 
 //=================================import react library=================================
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Platform } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
 //=================================import js file=======================================
@@ -19,6 +19,7 @@ import Account from './Components/Screens/Account/Account';
 export const HomeStack = StackNavigator({
     Windows_Home: {
         screen: Home,
+        name: 'Home',
         navigationOptions: {
             title: 'Home',
 
@@ -26,44 +27,66 @@ export const HomeStack = StackNavigator({
     }
 },
     {
-        
+        mode: Platform.OS === 'ios' ? 'modal' : 'card',
+        headerMode: 'none',
     });
 
 export const CollectionStack = StackNavigator({
     Windows_Collection: {
         screen: Collection,
+        name: 'Collection',
         navigationOptions: {
             title: 'Collection'
         }
     }
-});
+}, {
+        mode: Platform.OS === 'ios' ? 'modal' : 'card',
+        headerMode: 'none',
+    }
+);
 
 export const SourceStack = StackNavigator({
     Windows_Collection: {
         screen: Source,
+        name: 'Source',
         navigationOptions: {
-            title: 'Source'
+            title: 'Source',
+            header: null,
         }
     }
-});
+},{
+        mode: Platform.OS === 'ios' ? 'modal' : 'card',
+        headerMode: 'none',
+    });
 
 export const VideoStack = StackNavigator({
     Windows_Video: {
         screen: Video,
+        name: 'Video',
+
         navigationOptions: {
             title: 'Video'
         }
     }
-});
+},{
+        mode: Platform.OS === 'ios' ? 'modal' : 'card',
+        headerMode: 'none',
+    });
 
 export const AccountStack = StackNavigator({
     Windows_Account: {
         screen: Account,
+        name: 'Account',
         navigationOptions: {
-            title: 'Account'
+            title: 'Account',
+            header: null,
+            mode: Platform.OS === 'ios' ? 'modal' : 'card',
         }
     }
-});
+},{
+        mode: Platform.OS === 'ios' ? 'modal' : 'card',
+        headerMode: 'none',
+    });
 
 //=================================Tabbar=======================================
 export const Tabbar = TabNavigator({
@@ -79,16 +102,16 @@ export const Tabbar = TabNavigator({
             tabbarLabel: 'Collection'
         }
     },
-    Source: {
-        screen: SourceStack,
-        navigationOptions: {
-            tabbarLabel: 'Source'
-        }
-    },
     Video: {
         screen: VideoStack,
         navigationOptions: {
             tabbarLabel: 'Video'
+        }
+    },
+    Source: {
+        screen: SourceStack,
+        navigationOptions: {
+            tabbarLabel: 'Source'
         }
     },
     Account: {
@@ -111,6 +134,8 @@ export const Tabbar = TabNavigator({
             inactiveTintColor: 'green',
         },
         initialRouteName: 'Home',
-        swipeEnabled: true
+        swipeEnabled: false,
+        lazy: false,
+        animationEnabled: true,
     });
 

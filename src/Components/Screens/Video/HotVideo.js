@@ -16,6 +16,8 @@ import Swiper from 'react-native-swiper';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 //=================================import picture for temporary UI===========================
+import heartIcon from '../../../Images/icon/heart.png';
+
 import summerIcon_1 from '../../../Images/summer_img/summer_1.jpg';
 import summerIcon_2 from '../../../Images/summer_img/summer_2.jpg';
 import summerIcon_3 from '../../../Images/summer_img/summer_3.jpg';
@@ -24,22 +26,22 @@ import summerIcon_5 from '../../../Images/summer_img/summer_5.jpg';
 
 //=================================Global variable===========================================
 const { height, width } = Dimensions.get('window');
-const imageWidth = width;
+const imageWidth = width-30;
+const textWidth = width/(1.5);
 const imageHeight = imageWidth / 3;
 var tmp_array = [
-    { key: "1", value: summerIcon_1, description: 'Bánh trà xanh sốt caramel' },
-    { key: "2", value: summerIcon_2, description: 'Bánh moha' },
-    { key: "3", value: summerIcon_3, description: 'Tiramisu trà xanh' },
-    { key: "4", value: summerIcon_4, description: 'Ice cake break' },
-    { key: "5", value: summerIcon_5, description: 'Lemon cheese cake' }
+    { key: "1", value: summerIcon_1, description: 'Học pha chế - cách pha chế cootail siêu ngon cho ngày cuối tuần' },
+    { key: "2", value: summerIcon_2, description: 'Học pha chế - cách pha chế soda red siêu ngon cho người bạn thân' },
+    { key: "3", value: summerIcon_3, description: 'Học nấu ăn- cách nấu món canh khổ qua giải độc cơ thể' },
+    { key: "4", value: summerIcon_4, description: 'Học nấu ăn- cách làm gà chiên giòn giống kfc' },
 ];
-export default class SummerFood extends Component {
+
+export default class HotVideo extends Component {
     constructor(props) {
         super(props);
-        const ds =
-            this.state = {
+        this.state = {
 
-            }
+        }
     }
     state = {}
     render() {
@@ -47,17 +49,11 @@ export default class SummerFood extends Component {
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>
-                        Các món ăn mùa hè
+                        Hot Video
                     </Text>
-                    <TouchableOpacity>
-                        <Text style={styles.moreText}>
-                            More
-                        </Text>
-                    </TouchableOpacity>
                 </View>
-
                 <ListView enableEmptySections
-                    horizontal={true} removeClippedSubviews
+                    horizontal={false} removeClippedSubviews
                     dataSource={new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
                         .cloneWithRows(tmp_array)}
                     style={styles.listProduct}
@@ -65,11 +61,18 @@ export default class SummerFood extends Component {
                         <TouchableOpacity>
                             <View style={styles.product}>
                                 <Image source={product.value} style={styles.imgProduct} />
-                                <Text style={styles.textProduct}>{product.description}
-                                </Text>
+                                <View style={styles.wrapContent}>
+                                    <Text style={styles.textProduct}>
+                                        {product.description}
+                                    </Text>
+                                    <TouchableOpacity style={styles.rightIcon}>
+                                        <Image source={heartIcon} style={styles.icon} />
+                                        </TouchableOpacity>
+                                </View>
                             </View>
                         </TouchableOpacity>
                     )} />
+
             </View>
         );
     }
@@ -79,10 +82,10 @@ export default class SummerFood extends Component {
 //=================================using Extendsion StyleSheet===========================
 const styles = StyleSheet.create({
     container: {
-        height: 220,
         backgroundColor: '#fff',
         marginTop: 5,
-        flexDirection: 'column'
+        flexDirection: 'column',
+        paddingBottom: 10
     },
     header: {
         flexDirection: 'row',
@@ -92,29 +95,44 @@ const styles = StyleSheet.create({
     headerText: {
         color: 'green',
         fontSize: 18,
-        marginLeft: 10
+        marginLeft: 15
     },
-    moreText: {
-        color: 'green',
-        fontSize: 15,
-        marginRight: 10,
-        marginTop: 2
-    },
+
     listProduct: {
-        flexDirection: 'row'
+        flexDirection: 'column'
     },
     product: {
-        justifyContent: 'center',
-        marginHorizontal: 5,
-        width: 150
+        marginVertical: 5,
+        width: width,
+        marginLeft: 15,
     },
     imgProduct: {
-        width: 150,
-        height: 120,
-        borderRadius: 15,
+        width: imageWidth,
+        height: 140,
+    },
+    wrapContent: {
+        flexDirection: 'row',
+        width:width,
+        justifyContent:'space-between',
+        alignContent:'space-between'
     },
     textProduct: {
         flexWrap: 'wrap',
-        textAlign: 'center'
+        textAlign: 'left',
+        color: '#000',
+        fontSize: 16,
+        fontWeight: '400',
+        fontFamily:'Roboto',
+        width:textWidth,
+    },
+    rightIcon:{
+        right:35,
+        marginTop:3,
+        alignContent:'flex-end'
+    },
+    icon:{
+        width:20,
+        height:20,
+        alignSelf:'flex-end',
     }
 });

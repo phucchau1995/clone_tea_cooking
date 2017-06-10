@@ -23,7 +23,10 @@ const imageWidth = width - 40;
 const imageHeight = imageWidth / 2;
 
 export default class Home extends Component {
-    static navigationOptions = { title: 'Home', header: null };
+    static navigationOptions = { 
+        title: 'Home', header: null,
+        tabBarLabel:'Home'
+    };
     state = {}
     render() {
         return (

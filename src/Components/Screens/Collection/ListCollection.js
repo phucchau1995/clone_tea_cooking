@@ -20,20 +20,30 @@ import summerIcon_1 from '../../../Images/summer_img/summer_1.jpg';
 import summerIcon_2 from '../../../Images/summer_img/summer_2.jpg';
 import summerIcon_3 from '../../../Images/summer_img/summer_3.jpg';
 import summerIcon_4 from '../../../Images/summer_img/summer_4.jpg';
-import summerIcon_5 from '../../../Images/summer_img/summer_5.jpg';
+import summerIcon_5 from '../../../Images/summer_img/summer_4.jpg';
+import summerIcon_6 from '../../../Images/summer_img/summer_5.jpg';
+import summerIcon_7 from '../../../Images/summer_img/summer_5.jpg';
+import summerIcon_8 from '../../../Images/summer_img/summer_5.jpg';
+import summerIcon_9 from '../../../Images/summer_img/summer_5.jpg';
+import summerIcon_10 from '../../../Images/summer_img/summer_5.jpg';
 
 //=================================Global variable===========================================
 const { height, width } = Dimensions.get('window');
 const imageWidth = width;
 const imageHeight = imageWidth / 3;
 var tmp_array = [
-    { key: "1", value: summerIcon_1, description: 'Bánh trà xanh sốt caramel' },
-    { key: "2", value: summerIcon_2, description: 'Bánh moha' },
-    { key: "3", value: summerIcon_3, description: 'Tiramisu trà xanh' },
-    { key: "4", value: summerIcon_4, description: 'Ice cake break' },
-    { key: "5", value: summerIcon_5, description: 'Lemon cheese cake' }
+    { key: "1", value: summerIcon_1, description: 'Món ăn mặn' },
+    { key: "2", value: summerIcon_2, description: 'Món ăn sáng' },
+    { key: "3", value: summerIcon_3, description: 'Món canh' },
+    { key: "4", value: summerIcon_4, description: 'Món ăn vặt' },
+    { key: "5", value: summerIcon_5, description: 'Món ngon cuối tuần' },
+    { key: "6", value: summerIcon_6, description: 'Món chay' },
+    { key: "7", value: summerIcon_7, description: 'Đồ uống' },
+    { key: "8", value: summerIcon_8, description: 'Món bánh' },
+    { key: "9", value: summerIcon_9, description: 'Món ngon ngày lễ' },
+    { key: "10", value: summerIcon_10, description: 'Món ngon các nước' },
 ];
-export default class SummerFood extends Component {
+export default class ListCollection extends Component {
     constructor(props) {
         super(props);
         const ds =
@@ -45,29 +55,15 @@ export default class SummerFood extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.header}>
-                    <Text style={styles.headerText}>
-                        Các món ăn mùa hè
-                    </Text>
-                    <TouchableOpacity>
-                        <Text style={styles.moreText}>
-                            More
-                        </Text>
-                    </TouchableOpacity>
-                </View>
-
                 <ListView enableEmptySections
-                    horizontal={true} removeClippedSubviews
                     dataSource={new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
                         .cloneWithRows(tmp_array)}
-                    style={styles.listProduct}
+                    contentContainerStyle={styles.listProduct}
                     renderRow={product => (
-                        <TouchableOpacity>
-                            <View style={styles.product}>
-                                <Image source={product.value} style={styles.imgProduct} />
-                                <Text style={styles.textProduct}>{product.description}
-                                </Text>
-                            </View>
+                        <TouchableOpacity style={styles.product}>
+                            <Image source={product.value} style={styles.imgProduct} />
+                            <Text style={styles.textProduct}>{product.description}
+                            </Text>
                         </TouchableOpacity>
                     )} />
             </View>
@@ -79,42 +75,30 @@ export default class SummerFood extends Component {
 //=================================using Extendsion StyleSheet===========================
 const styles = StyleSheet.create({
     container: {
-        height: 220,
+        flex:1,
         backgroundColor: '#fff',
-        marginTop: 5,
-        flexDirection: 'column'
-    },
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginVertical: 15
-    },
-    headerText: {
-        color: 'green',
-        fontSize: 18,
-        marginLeft: 10
-    },
-    moreText: {
-        color: 'green',
-        fontSize: 15,
-        marginRight: 10,
-        marginTop: 2
+        flexDirection: 'column',
     },
     listProduct: {
-        flexDirection: 'row'
+        marginTop:10,
+        marginBottom:10,
+        flexDirection: 'row',
+        flexWrap:'wrap',
+        justifyContent:'center',
     },
     product: {
-        justifyContent: 'center',
         marginHorizontal: 5,
-        width: 150
+        width: 160,
+        flexWrap:'wrap',
+        justifyContent:'center',
+        marginBottom:10
     },
     imgProduct: {
-        width: 150,
+        width: 160,
         height: 120,
-        borderRadius: 15,
     },
     textProduct: {
         flexWrap: 'wrap',
-        textAlign: 'center'
+        textAlign:'center'
     }
 });

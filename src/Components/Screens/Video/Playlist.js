@@ -33,7 +33,7 @@ var tmp_array = [
     { key: "4", value: summerIcon_4, description: 'Ice cake break' },
     { key: "5", value: summerIcon_5, description: 'Lemon cheese cake' }
 ];
-export default class SummerFood extends Component {
+export default class Playlist extends Component {
     constructor(props) {
         super(props);
         const ds =
@@ -47,13 +47,8 @@ export default class SummerFood extends Component {
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>
-                        Các món ăn mùa hè
+                        Playlist
                     </Text>
-                    <TouchableOpacity>
-                        <Text style={styles.moreText}>
-                            More
-                        </Text>
-                    </TouchableOpacity>
                 </View>
 
                 <ListView enableEmptySections
