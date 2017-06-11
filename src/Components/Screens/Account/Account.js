@@ -17,15 +17,18 @@ import FavoriteVideo from './FavoriteVideo';
 import HeaderAccount from './HeaderAccount';
 
 export default class Account extends Component {
-    static navigationOptions = { title: 'Home', header: null };
+    static navigationOptions = { 
+        title: 'Home', header: null,tabbarLabel:'Account',
+        
+    };
     state = {}
     render() {
         return (
             <ScrollView style={styles.container}>
                 <StatusBar hidden={true} />
-                <HeaderAccount />
-                <FavoriteFood />
-                <FavoriteVideo />
+                <HeaderAccount navigation = {this.props.navigation}/>
+                <FavoriteFood navigation = {this.props.navigation}/>
+                <FavoriteVideo navigation = {this.props.navigation}/>
             </ScrollView>
         );
     }

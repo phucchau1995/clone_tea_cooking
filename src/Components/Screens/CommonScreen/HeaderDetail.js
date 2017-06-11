@@ -22,7 +22,7 @@ export default class DetailFood extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
                     <Image source={backIcon} style={styles.icon} />
                 </TouchableOpacity>
                 <Text style={styles.text}>Cách nấu món soup gà...</Text>

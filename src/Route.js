@@ -5,7 +5,7 @@
 
 //=================================import react library=================================
 import React, { Component } from 'react';
-import { Text, View, Platform } from 'react-native';
+import { Text, View, Platform,Image,Dimensions } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
 //=================================import js file=======================================
@@ -17,6 +17,16 @@ import Account from './Components/Screens/Account/Account';
 import DetailFood from './Components/Screens/CommonScreen/DetailFood';
 import SignIn from './Components/Screens/Account/SignIn';
 import Register from './Components/Screens/Account/Register';
+
+//=================================import picture for temporary UI===========================
+import userIcon from './Images/icon/user.png';
+import homeIcon from './Images/icon/home.png';
+import collectionIcon from './Images/icon/collection.png';
+import videoIcon from './Images/icon/video.png';
+import sourceIcon from './Images/icon/source.png';
+
+//=================================Global variable===========================================
+const { height, width } = Dimensions.get('window');
 //=================================StackNavigator=======================================
 export const HomeStack = StackNavigator({
     Windows_Home: {
@@ -29,6 +39,7 @@ export const HomeStack = StackNavigator({
     }
 },
     {
+        initialRouteName: 'Windows_Home',
         mode: Platform.OS === 'ios' ? 'modal' : 'card',
         headerMode: 'none',
     });
@@ -56,7 +67,7 @@ export const SourceStack = StackNavigator({
             header: null,
         }
     }
-},{
+}, {
         mode: Platform.OS === 'ios' ? 'modal' : 'card',
         headerMode: 'none',
     });
@@ -69,8 +80,16 @@ export const VideoStack = StackNavigator({
         navigationOptions: {
             title: 'Video'
         }
-    }
-},{
+    },
+    Windows_Details: {
+        screen: DetailFood,
+        name: 'DetailFood',
+
+        navigationOptions: {
+            title: 'DetailFood'
+        }
+    },
+}, {
         mode: Platform.OS === 'ios' ? 'modal' : 'card',
         headerMode: 'none',
     });
@@ -84,60 +103,101 @@ export const AccountStack = StackNavigator({
             header: null,
             mode: Platform.OS === 'ios' ? 'modal' : 'card',
         }
-    }
-},{
+    },
+    Windows_SignIn: {
+        screen: SignIn,
+        name: 'SignIn',
+        navigationOptions: {
+            title: 'Đăng Nhập',
+            mode: Platform.OS === 'ios' ? 'modal' : 'card',
+        }
+    },
+    Windows_SignUp: {
+        screen: Register,
+        name: 'SignUp',
+        navigationOptions: {
+            title: 'Đăng Ký',
+            mode: Platform.OS === 'ios' ? 'modal' : 'card',
+        }
+    },
+    Windows_Details: {
+        screen: DetailFood,
+        name: 'DetailFood',
+        navigationOptions: {
+            header: null,
+        }
+    },
+}, {
+        initialRouteName: 'Windows_Account',
         mode: Platform.OS === 'ios' ? 'modal' : 'card',
-        headerMode: 'none',
     });
-
 //=================================Tabbar=======================================
 export const Tabbar = TabNavigator({
     Home: {
         screen: HomeStack,
         navigationOptions: {
-            tabbarLabel: ''
+            tabbarLabel: '',
+            tabBarIcon: (<Image style={{ width: 15, height: 15 }} source={homeIcon}/>),
+            showIcon: true,
+            
         }
     },
     Collection: {
         screen: CollectionStack,
         navigationOptions: {
-            tabbarLabel: 'Collection'
+            tabbarLabel: 'Collection',
+            tabBarIcon: (<Image style={{ width: 15, height: 15 }} source={collectionIcon}/>),
+            showIcon: true
         }
     },
     Video: {
         screen: VideoStack,
         navigationOptions: {
-            tabbarLabel: 'Video'
+            tabbarLabel: 'Video',
+            tabBarIcon: (<Image style={{ width: 15, height: 15 }} source={videoIcon}/>),
+            showIcon: true
         }
     },
     Source: {
         screen: SourceStack,
         navigationOptions: {
-            tabbarLabel: 'Source'
+            tabbarLabel: 'Source',
+            tabBarIcon: (<Image style={{ width: 15, height: 15 }} source={sourceIcon}/>),
+            showIcon: true
         }
     },
     Account: {
         screen: AccountStack,
-        navigationOptions: {
-            tabbarLabel: 'Account'
+        navigationOptions:  {
+            tabbarLabel: 'Tài khoản',
+            title: 'Tài khoản',
+            tabBarIcon: (<Image style={{ width: 15, height: 15 }} source={userIcon}/>),
+            showIcon: true
         }
     },
 },
     {
+         
         tabBarPosition: 'bottom',
         tabBarOptions: {
             style: {
-                backgroundColor: '#ccc',
+                backgroundColor: '#ff6699',
+                height:40,
+                width:width
             },
             labelStyle: {
                 fontSize: 10
             },
+            tabStyle:{
+            },
+            scrollEnabled: false,
+            showIcon:'true',
             activeTintColor: 'green',
             inactiveTintColor: 'green',
         },
         initialRouteName: 'Home',
         swipeEnabled: false,
-        lazy: false,
+        lazy: true,
         animationEnabled: true,
     });
 

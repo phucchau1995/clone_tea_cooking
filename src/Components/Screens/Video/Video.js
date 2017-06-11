@@ -25,8 +25,8 @@ export default class Video extends Component {
             <ScrollView style={styles.container}>
                 <StatusBar hidden={true} />
                 <HeaderVideo />
-                <Playlist />
-                <HotVideo />
+                <Playlist navigation={this.props.navigation}/>
+                <HotVideo navigation={this.props.navigation} />
             </ScrollView>
         );
     }

@@ -57,7 +57,7 @@ export default class Playlist extends Component {
                         .cloneWithRows(tmp_array)}
                     style={styles.listProduct}
                     renderRow={product => (
-                        <TouchableOpacity>
+                        <TouchableOpacity  onPress={() => this.props.navigation.navigate('Windows_Details')}>
                             <View style={styles.product}>
                                 <Image source={product.value} style={styles.imgProduct} />
                                 <Text style={styles.textProduct}>{product.description}

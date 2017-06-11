@@ -55,7 +55,7 @@ export default class SignIn extends Component {
                         <TouchableOpacity>
                         <Text style={styles.txtForgot}>Quên mật khẩu?</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Windows_SignUp')}>
                         <Text style={styles.txtForgot}>Đăng ký ngay nào</Text>
                         </TouchableOpacity>
                     </View>

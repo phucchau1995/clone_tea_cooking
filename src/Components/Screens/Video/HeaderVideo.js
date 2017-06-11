@@ -6,7 +6,7 @@ export default class HeaderVideo extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.text}>VIDEO</Text>
+                <Text style={styles.text}>Video Ẩm Thực Hot Trong Tuần</Text>
             </View>
         );
     }
@@ -18,12 +18,12 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         backgroundColor:'#00cc66',
-        padding:10
+        padding:5
         
     },
     text:{
         textAlign:'center',
-        fontSize:24,
+        fontSize:20,
         fontWeight:'400',
         color:'#fff',
         fontFamily:'Roboto'

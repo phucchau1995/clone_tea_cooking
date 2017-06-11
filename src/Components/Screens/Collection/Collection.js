@@ -21,10 +21,11 @@ export default class Collection extends Component {
     state = {}
     render() {
         return (
+            
             <ScrollView style={styles.container}>
                 <StatusBar hidden={true} />
-                <HeaderCollection />
-                <ListCollection />
+                <HeaderCollection navigation = {this.props.navigation}/>
+                <ListCollection navigation = {this.props.navigation}/>
             </ScrollView>
         );
     }

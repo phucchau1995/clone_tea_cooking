@@ -18,12 +18,12 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         backgroundColor:'#00cc66',
-        padding:10
+        padding:5
         
     },
     text:{
         textAlign:'center',
-        fontSize:24,
+        fontSize:20,
         fontWeight:'400',
         color:'#fff',
         fontFamily:'Roboto'

@@ -10,7 +10,7 @@ import {
     Text, View, StyleSheet, TouchableOpacity,
     Image, Dimensions, ListView
 } from 'react-native';
-
+import { StackNavigator, TabNavigator } from 'react-navigation';
 //=================================import library from 3-rd party============================
 import Swiper from 'react-native-swiper';
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -36,13 +36,13 @@ export default class HeaderAccount extends Component {
     render() {
         return (
             <View style={styles.container} >
-               <Image style={styles.background} source={background}/>
-               <View style={styles.wrapper}>
-                    <TouchableOpacity>
-                    <Image style={styles.icLogin} source={chefIcon} />
+                <Image style={styles.background} source={background} />
+                <View style={styles.wrapper}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Windows_SignIn')}>
+                        <Image style={styles.icLogin} source={chefIcon} />
                     </TouchableOpacity>
-                    <TouchableOpacity>
-                    <Text style={styles.txtLogin}>Đăng Nhập</Text>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Windows_SignIn')}>
+                        <Text style={styles.txtLogin}>Đăng Nhập</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -55,25 +55,25 @@ export default class HeaderAccount extends Component {
 const styles = StyleSheet.create({
     container: {
         height: 250,
-        backgroundColor:'#fff'
+        backgroundColor: '#fff'
     },
-    background:{
+    background: {
         height: 150,
-        width:width,
+        width: width,
     },
-    wrapper:{
-        alignItems:'center',
-        top:-50
+    wrapper: {
+        alignItems: 'center',
+        top: -50
     },
-    icLogin:{
-        width:80,
-        height:80,
-        marginBottom:10      
+    icLogin: {
+        width: 80,
+        height: 80,
+        marginBottom: 10
     },
-    txtLogin:{
-        textAlign:'center',
-        color:'green',
-        fontSize:18,
-        fontWeight:'500'
+    txtLogin: {
+        textAlign: 'center',
+        color: 'green',
+        fontSize: 18,
+        fontWeight: '500'
     }
 });

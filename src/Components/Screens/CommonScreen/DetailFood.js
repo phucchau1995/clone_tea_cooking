@@ -20,8 +20,8 @@ export default class DetailFood extends Component {
     render() {
         return (
             <ScrollView>
-                <HeaderDetail />
-                <DetailView />
+                <HeaderDetail navigation = {this.props.navigation}/>
+                <DetailView navigation = {this.props.navigation}/>
             </ScrollView>
         );
     }
